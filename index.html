@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Fabri | Sistema de Control de Costes y Gestión de Obras</title>
+    
+    <!-- Meta tags SEO -->
+    <meta name="description" content="La plataforma definitiva de control de costes y presupuestos para constructoras. Gestión de proveedores, análisis de desvíos, exportación profesional y privacidad certificada.">
+    <meta name="keywords" content="CRM Fabri, CRM Obras, control de costes, gestión de presupuestos, software construcción, ERP obra">
+    <meta name="author" content="Aritz Bahamonde Larxé">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="icon.png" type="image/png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER / NAV -->
+    <header class="navbar">
+        <div class="container navbar-flex">
+            <div class="logo-container">
+                <img src="logo.png" alt="CRM Fabri Logo" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                <span class="fallback-title">CRM Fabri</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#hero">Inicio</a>
+                <a href="#features">Características</a>
+                <a href="#offline">Privacidad</a>
+                <a href="#contact">Contacto</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="CRM-Fabri-v1.0.0-Setup.exe" class="btn-download-nav" download>
+                    <i class="fab fa-windows"></i> Descargar
+                </a>
+                <!-- Botón de Menú Móvil -->
+                <button id="menuToggle" class="menu-toggle-btn" aria-label="Abrir menú">
+                    <i id="menuIcon" class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+        <!-- Glows Decorativos -->
+        <div class="glow glow-blue"></div>
+        <div class="glow glow-purple"></div>
+
+        <div class="container hero-content">
+            <div class="badge-container">
+                <span class="version-badge"><i class="fas fa-bolt animate-pulse"></i> v1.0.0 - Disponible para Windows</span>
+            </div>
+            <h1 class="hero-title">
+                Control Total.<br>
+                <span class="gradient-text">Rentabilidad Absoluta.</span>
+            </h1>
+            <p class="hero-desc">
+                La plataforma definitiva para constructoras y gestores de proyectos que buscan el control total de sus costes en tiempo real. Gestión de presupuestos, materiales, proveedores y análisis exhaustivo de desviaciones.
+            </p>
+            
+            <div class="hero-actions">
+                <a href="CRM-Fabri-v1.0.0-Setup.exe" class="btn-primary" download>
+                    <i class="fab fa-windows"></i> DESCARGAR PARA WINDOWS
+                </a>
+            </div>
+
+            <!-- Dashboard Mockup -->
+            <div class="mockup-container">
+                <div class="mockup-frame">
+                    <img src="laptop.png" alt="CRM Fabri Dashboard Mockup" class="laptop-screen">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">POTENCIA A TU DISPOSICIÓN</span>
+                <h2 class="section-title">Módulos Especializados</h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card glass">
+                    <div class="feature-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h3 class="feature-card-title">Control de Costes</h3>
+                    <p class="feature-card-desc">Monitorea presupuestos y desvíos de manera instantánea. Gráficos interactivos de rentabilidad por categoría y proyectos activos.</p>
+                </div>
+                <div class="feature-card glass">
+                    <div class="feature-icon"><i class="fas fa-cubes"></i></div>
+                    <h3 class="feature-card-title">Base de Datos de Materiales</h3>
+                    <p class="feature-card-desc">Gestión centralizada de fichas técnicas, precios de referencia, proveedores y existencias para cada obra.</p>
+                </div>
+                <div class="feature-card glass">
+                    <div class="feature-icon"><i class="fas fa-sliders-h"></i></div>
+                    <h3 class="feature-card-title">Escala Adaptable</h3>
+                    <p class="feature-card-desc">Diseño premium optimizado con selector de escala integrado. Visualiza tus datos cómodamente en cualquier tamaño de monitor.</p>
+                </div>
+                <div class="feature-card glass">
+                    <div class="feature-icon"><i class="fas fa-file-export"></i></div>
+                    <h3 class="feature-card-title">Exportación de Informes</h3>
+                    <p class="feature-card-desc">Genera listados profesionales y reportes financieros filtrados en PDF, CSV y hojas de cálculo de Excel al instante.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFFLINE FIRST / SEGURIDAD SECTION -->
+    <section id="offline" class="offline-section">
+        <div class="container">
+            <div class="offline-grid">
+                <div class="offline-content">
+                    <span class="section-tag text-blue">ARQUITECTURA DE DATOS LOCAL</span>
+                    <h2 class="section-title">Offline First.<br><span class="text-blue">Privacidad Certificada.</span></h2>
+                    <p class="offline-desc">
+                        A diferencia de otras soluciones, CRM Fabri se instala localmente. No necesitas conexión permanente a internet para trabajar, ni dependes de servidores externos. Tus presupuestos, facturas y datos de clientes permanecen 100% seguros dentro de tus equipos.
+                    </p>
+                    <ul class="offline-list">
+                        <li>
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                            <span><strong>Resiliencia:</strong> Trabaja en zonas sin cobertura sin perder funcionalidad.</span>
+                        </li>
+                        <li>
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                            <span><strong>Latencia Cero:</strong> Acceso instantáneo a bases de datos pesadas sin retrasos de red.</span>
+                        </li>
+                        <li>
+                            <div class="check-icon"><i class="fas fa-check"></i></div>
+                            <span><strong>Copias de Seguridad:</strong> Sistema integrado para respaldar y restaurar datos localmente.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="offline-visual">
+                    <div class="floating-shield-card">
+                        <i class="fas fa-shield-halved shield-icon"></i>
+                        <h3>Seguridad Absoluta</h3>
+                        <p>Datos locales cifrados para evitar fugas de información o caídas de servicio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">¿TIENES DUDAS?</span>
+                <h2 class="section-title">Formulario de Contacto</h2>
+                <p class="section-lead">Completa el formulario y responderemos a tus consultas sobre CRM Fabri a la brevedad.</p>
+            </div>
+            
+            <div class="contact-card glass">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-grid">
+                        <div class="form-group form-group-full">
+                            <label for="formName" class="form-label">Nombre completo</label>
+                            <input id="formName" type="text" required placeholder="Tu nombre" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="formEmail" class="form-label">Correo electrónico</label>
+                            <input id="formEmail" type="email" required placeholder="tu@email.com" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="formPhone" class="form-label">Teléfono (Opcional)</label>
+                            <input id="formPhone" type="tel" placeholder="+34..." class="form-input">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="formMessage" class="form-label">Mensaje</label>
+                        <textarea id="formMessage" rows="5" required placeholder="Escribe tu mensaje aquí..." class="form-textarea"></textarea>
+                    </div>
+                    <button id="submitButton" type="submit" class="btn-submit">
+                        <i id="submitIcon" class="fas fa-paper-plane"></i>
+                        <span id="submitText">Enviar Mensaje</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <p class="copyright">© 2026 Aritz Bahamonde Larxé & BABELEX. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- COOKIES MODAL -->
+    <div id="cookiesModal" class="cookies-overlay">
+        <div class="cookies-card">
+            <div class="cookies-icon-container">
+                <i class="fas fa-cookie-bite cookies-icon"></i>
+            </div>
+            <div class="cookies-content">
+                <h3 class="cookies-title">Aviso de Cookies</h3>
+                <p class="cookies-text">
+                    Utilizamos cookies propias y de terceros para optimizar tu experiencia en el ecosistema AntiGravity, analizar la navegación y ofrecerte funciones personalizadas de alta calidad.
+                </p>
+            </div>
+            <div class="cookies-buttons">
+                <button id="declineCookies" class="cookies-btn cookies-btn-decline">Rechazar</button>
+                <button id="acceptCookies" class="cookies-btn cookies-btn-accept">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Formulario de Contacto
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitButton');
+            const submitText = document.getElementById('submitText');
+            const submitIcon = document.getElementById('submitIcon');
+            
+            const name = document.getElementById('formName').value;
+            const email = document.getElementById('formEmail').value;
+            const phone = document.getElementById('formPhone').value;
+            const message = document.getElementById('formMessage').value;
+            
+            submitBtn.disabled = true;
+            submitBtn.classList.add('cursor-wait');
+            submitText.innerText = 'Enviando...';
+            submitIcon.className = 'fas fa-spinner fa-spin';
+            
+            const payload = {
+                name: name,
+                email: email,
+                phone: phone,
+                message: message,
+                notes: 'Enviado desde el formulario de contacto estático de CRM Fabri.',
+                source: 'CRM Fabri'
+            };
+            
+            try {
+                const res = await fetch('https://aritz-bahamonde.vercel.app/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (res.ok) {
+                    submitIcon.className = 'fas fa-check-circle';
+                    submitText.innerText = '¡Enviado con Éxito!';
+                    submitBtn.classList.add('btn-success');
+                    document.getElementById('contactForm').reset();
+                    
+                    setTimeout(() => {
+                        submitIcon.className = 'fas fa-paper-plane';
+                        submitText.innerText = 'Enviar Mensaje';
+                        submitBtn.classList.remove('btn-success', 'cursor-wait');
+                        submitBtn.disabled = false;
+                    }, 5000);
+                } else {
+                    throw new Error('Error en el servidor');
+                }
+            } catch (err) {
+                console.error('[Contact Form Error]', err);
+                submitIcon.className = 'fas fa-exclamation-triangle';
+                submitText.innerText = 'Error al enviar';
+                submitBtn.classList.add('btn-error');
+                
+                setTimeout(() => {
+                    submitIcon.className = 'fas fa-paper-plane';
+                    submitText.innerText = 'Enviar Mensaje';
+                    submitBtn.classList.remove('btn-error', 'cursor-wait');
+                    submitBtn.disabled = false;
+                }, 5000);
+            }
+        });
+
+        // Cookies
+        const cookiesModal = document.getElementById('cookiesModal');
+        const acceptBtn = document.getElementById('acceptCookies');
+        const declineBtn = document.getElementById('declineCookies');
+
+        const showCookies = () => { cookiesModal.classList.add('show'); };
+        const hideCookies = () => { cookiesModal.classList.remove('show'); };
+
+        if (!localStorage.getItem('crm_cookies_consent_v1')) {
+            setTimeout(showCookies, 1000);
+        }
+
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('crm_cookies_consent_v1', 'accepted');
+            hideCookies();
+        });
+
+        declineBtn.addEventListener('click', () => {
+            localStorage.setItem('crm_cookies_consent_v1', 'declined');
+            hideCookies();
+        });
+
+        // Menú Móvil
+        const menuToggle = document.getElementById('menuToggle');
+        const menuIcon = document.getElementById('menuIcon');
+        const navLinks = document.querySelector('.nav-links');
+        const links = document.querySelectorAll('.nav-links a');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                menuIcon.className = 'fas fa-times';
+            } else {
+                menuIcon.className = 'fas fa-bars';
+            }
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuIcon.className = 'fas fa-bars';
+            });
+        });
+    </script>
+</body>
+</html>
