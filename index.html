@@ -191,7 +191,7 @@
     <!-- FOOTER -->
     <footer>
         <div class="footer-container">
-            <p class="copyright">© 2026 Aritz Bahamonde Larxé & BABELEX. All rights reserved.</p>
+            <p class="copyright">© 2026 Aritz Bahamonde Larxé & BABELEX. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -326,5 +326,331 @@
             });
         });
     </script>
-</body>
+
+<!-- AntiGravity Legal Footer -->
+<footer class="abl-legal-footer-wrap">
+  <div class="abl-legal-footer-container">
+    <p style="margin: 0; color: #94a3b8;">&copy; 2026 Aritz Bahamonde Larxé. Todos los derechos reservados.</p>
+    <nav class="abl-legal-nav" aria-label="Enlaces legales">
+      <button type="button" class="abl-legal-btn" onclick="ablOpenLegalModal('notice')">Aviso Legal</button>
+      <button type="button" class="abl-legal-btn" onclick="ablOpenLegalModal('privacy')">Política de Privacidad</button>
+      <button type="button" class="abl-legal-btn" onclick="ablOpenLegalModal('cookies')">Política de Cookies</button>
+    </nav>
+  </div>
+</footer>
+
+<!-- AntiGravity Universal Legal Suite & Responsive Modals -->
+<style id="abl-universal-legal-style">
+  .abl-legal-footer-wrap {
+    width: 100%;
+    padding: 2rem 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.35);
+    color: #94a3b8;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.875rem;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+  }
+  .abl-legal-footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  @media (min-width: 768px) {
+    .abl-legal-footer-container {
+      flex-direction: row;
+      text-align: left;
+    }
+  }
+  .abl-legal-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .abl-legal-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 0.8125rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease;
+    text-decoration: none;
+  }
+  .abl-legal-btn:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+  }
+  /* Modals */
+  .abl-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    box-sizing: border-box;
+  }
+  .abl-modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .abl-modal-card {
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 1.25rem;
+    max-width: 650px;
+    width: 100%;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    color: #e2e8f0;
+    transform: scale(0.95);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .abl-modal-overlay.active .abl-modal-card {
+    transform: scale(1);
+  }
+  .abl-modal-header {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .abl-modal-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  .abl-modal-close-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+  }
+  .abl-modal-close-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+  }
+  .abl-modal-body {
+    padding: 1.5rem;
+    overflow-y: auto;
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: #cbd5e1;
+  }
+  .abl-modal-body h4 {
+    color: #38bdf8;
+    margin: 1.25rem 0 0.5rem 0;
+    font-size: 0.95rem;
+  }
+  .abl-modal-body h4:first-child {
+    margin-top: 0;
+  }
+  .abl-modal-body p {
+    margin: 0 0 0.75rem 0;
+  }
+  .abl-modal-body ul {
+    margin: 0 0 0.75rem 1.25rem;
+    padding: 0;
+  }
+  .abl-modal-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: flex-end;
+  }
+  /* Cookie Banner Card */
+  .abl-cookie-banner-wrap {
+    position: fixed;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    right: 1.25rem;
+    max-width: 520px;
+    z-index: 99998;
+    background: rgba(15, 23, 42, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    box-sizing: border-box;
+    animation: ablFadeInUp 0.4s ease-out;
+  }
+  @keyframes ablFadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .abl-cookie-banner-text {
+    font-size: 0.875rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .abl-cookie-banner-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+  .abl-btn-primary {
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .abl-btn-primary:hover {
+    background: #1d4ed8;
+  }
+  .abl-btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: #cbd5e1;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .abl-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+  }
+</style>
+
+<!-- Legal Modal Dialog -->
+<div id="ablLegalModal" class="abl-modal-overlay" onclick="if(event.target===this) ablCloseLegalModal()" aria-hidden="true">
+  <div class="abl-modal-card" role="dialog" aria-modal="true">
+    <div class="abl-modal-header">
+      <h3 id="ablLegalModalTitle">Información Legal</h3>
+      <button class="abl-modal-close-btn" onclick="ablCloseLegalModal()" aria-label="Cerrar">&times;</button>
+    </div>
+    <div id="ablLegalModalBody" class="abl-modal-body">
+      <!-- Injected Content -->
+    </div>
+    <div class="abl-modal-footer">
+      <button class="abl-btn-primary" onclick="ablCloseLegalModal()">Entendido</button>
+    </div>
+  </div>
+</div>
+
+<!-- Cookies Consent Banner -->
+<div id="ablCookieBanner" class="abl-cookie-banner-wrap" role="region" aria-label="Consentimiento de Cookies">
+  <p class="abl-cookie-banner-text">
+    🍪 <strong>Aviso de Cookies:</strong> Utilizamos cookies técnicas y analíticas necesarias para garantizar el correcto funcionamiento del portal y mejorar su experiencia. Puede consultar más detalles en nuestra <button type="button" class="abl-legal-btn" style="padding:0; color:#38bdf8; text-decoration:underline; font-size:inherit; display:inline; vertical-align:baseline;" onclick="ablOpenLegalModal('cookies')">Política de Cookies</button>.
+  </p>
+  <div class="abl-cookie-banner-actions">
+    <button class="abl-btn-secondary" onclick="ablConsentCookies(false)">Rechazar</button>
+    <button class="abl-btn-primary" onclick="ablConsentCookies(true)">Aceptar</button>
+  </div>
+</div>
+
+<script id="abl-universal-legal-script">
+  var ABL_LEGAL_DOCS = {
+    notice: {
+      title: 'Aviso Legal',
+      html: '<h4>1. Datos Identificativos</h4><p>En cumplimiento con el deber de información estipulado en el artículo 10 de la Ley 34/2002 de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSI-CE), se informa que el presente sitio web es de titularidad y gestión de Aritz Bahamonde Larxé.</p><h4>2. Propiedad Intelectual y Uso</h4><p>Todos los contenidos, diseños, código fuente, logotipos y elementos audiovisuales están protegidos por la legislación española e internacional sobre propiedad intelectual. Queda prohibida su reproducción o distribución no autorizada.</p><h4>3. Exclusión de Responsabilidad</h4><p>El titular no se hace responsable de los posibles daños o perjuicios que pudieran derivarse de interferencias, omisiones, interrupciones o virus informáticos ajenos al control del sitio.</p>'
+    },
+    privacy: {
+      title: 'Política de Privacidad',
+      html: '<h4>1. Responsable del Tratamiento</h4><p>El responsable del tratamiento de datos personales es Aritz Bahamonde Larxé. El tratamiento de los datos se realiza conforme al Reglamento General de Protección de Datos (RGPD UE 2016/679) y la Ley Orgánica 3/2018 (LOPDGDD).</p><h4>2. Finalidad y Conservación</h4><p>Los datos facilitados a través de formularios se utilizan exclusivamente para responder a las consultas formuladas por el usuario o prestar los servicios solicitados, conservándose durante el tiempo estrictamente necesario.</p><h4>3. Ejercicio de Derechos</h4><p>El usuario puede ejercer en cualquier momento sus derechos de acceso, rectificación, supresión, limitación y oposición comunicándolo directamente al titular.</p>'
+    },
+    cookies: {
+      title: 'Política de Cookies',
+      html: '<h4>1. ¿Qué son las Cookies?</h4><p>Una cookie es un pequeño archivo descargado en su dispositivo al acceder a la página web para almacenar y recuperar información técnica sobre la navegación.</p><h4>2. Tipos de Cookies Utilizadas</h4><ul><li><strong>Cookies Técnicas Necesarias:</strong> Imprescindibles para la navegación, sesión y registro de su preferencia de cookies.</li><li><strong>Cookies Analíticas:</strong> Para optimizar el rendimiento y la experiencia de uso.</li></ul><h4>3. Configuración y Desactivación</h4><p>Puede permitir, bloquear o eliminar las cookies instaladas en su equipo mediante la configuración de las opciones de su navegador.</p>'
+    }
+  };
+
+  function ablOpenLegalModal(type) {
+    var doc = ABL_LEGAL_DOCS[type] || ABL_LEGAL_DOCS['notice'];
+    var titleEl = document.getElementById('ablLegalModalTitle');
+    var bodyEl = document.getElementById('ablLegalModalBody');
+    if (titleEl) titleEl.innerText = doc.title;
+    if (bodyEl) bodyEl.innerHTML = doc.html;
+    var modal = document.getElementById('ablLegalModal');
+    if (modal) {
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+  }
+
+  function ablCloseLegalModal() {
+    var modal = document.getElementById('ablLegalModal');
+    if (modal) {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+  }
+
+  function ablConsentCookies(accepted) {
+    localStorage.setItem('abl_cookie_consent_status', accepted ? 'accepted' : 'declined');
+    var banner = document.getElementById('ablCookieBanner');
+    if (banner) banner.style.display = 'none';
+  }
+
+  (function initAblLegal() {
+    function checkBanner() {
+      var consent = localStorage.getItem('abl_cookie_consent_status');
+      if (!consent) {
+        var banner = document.getElementById('ablCookieBanner');
+        if (banner) banner.style.display = 'flex';
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', checkBanner);
+    } else {
+      checkBanner();
+    }
+  })();
+
+  window.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') ablCloseLegalModal();
+  });
+</script>
+
+    <!-- Vercel Web Analytics Oficial -->
+    <script defer src="/_vercel/insights/script.js"></script>
+  </body>
 </html>
