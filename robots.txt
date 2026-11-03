@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://web-crm-fabri.vercel.app/sitemap.xml
